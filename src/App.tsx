@@ -2,61 +2,86 @@ import styled from 'styled-components';
 import {ButtonStyled} from "./components/Button.styled";
 import {LogoStyled} from "./components/Logo.styled";
 import {LinkStyled} from "./components/Link.styled";
-import {Box, BoxContent} from "./components/Box.styled";
-import {Content} from "./components/Content.styled";
+import {Box, BoxAbout, BoxSkills} from "./components/Box.styled";
+import {Content, ContentImg} from "./components/Content.styled";
 import {TextStyled} from "./components/Text.styled";
+import heroImg from "./assets/heroImg.png";
+import {TitleStyled} from "./components/Title.styled";
 
 
 function App() {
     return (
         <div>
             <Header>
-                <LogoStyled>Iliya Zolotyhin</LogoStyled>
+                <LogoStyled><TextStyled darkBlue fontSize={25} fontWeight>Iliya</TextStyled>
+                    <TextStyled darkBlue fontSize={25}>Zolotyhin</TextStyled></LogoStyled>
                 <Menu>
-                    <LinkStyled href="">About</LinkStyled>
-                    <LinkStyled href="">Passions</LinkStyled>
-                    <LinkStyled href="">Portfolio</LinkStyled>
-                    <ButtonStyled>contact Me</ButtonStyled>
+                    <LinkStyled href=""><TextStyled fontSize={25}>About</TextStyled></LinkStyled>
+                    <LinkStyled href=""><TextStyled fontSize={25}>Skills</TextStyled></LinkStyled>
+                    <LinkStyled href=""><TextStyled fontSize={25}>Portfolio</TextStyled></LinkStyled>
+                    <ButtonStyled><TextStyled white fontSize={25} fontWeight>contact Me</TextStyled></ButtonStyled>
                 </Menu>
             </Header>
             <Main>
                 <Box>
-                    <TextStyled darkBlue fontSize={'35'} fontWeight>Title1</TextStyled>
-                    <Content>Content</Content>
+                    <BoxAbout>
+                        <Content>
+                            <TextStyled darkBlue fontSize={35}>Hi !</TextStyled>
+                            <TitleStyled justifyContent={'left'}>
+                                <TextStyled darkBlue fontSize={35} fontWeight>I'm Zolotyhin Ilya.<br/> a Front-End
+                                    Developer</TextStyled>
+                            </TitleStyled>
+                            <TextStyled fontSize={23}>I have experience in creating SPA using React, Redux, TypeScript.
+                                Knowledge in user interface, testing, and debugging processes. I'm improving my skills
+                                in this direction
+                                and plan to expand them with new technologies, such as Angular.<br/>
+                                I usually spend my free time reading IT-literature (M.Fauler),
+                                Codewars and improving my English. Open to your suggestions.</TextStyled>
+                        </Content>
+                        <ContentImg><img src={heroImg} alt="heroImg"/></ContentImg>
+                    </BoxAbout>
                 </Box>
+
                 <Box>
-                    <h2>Title2</h2>
-                    <BoxContent>
+                    <TitleStyled>
+                        <TextStyled darkBlue fontSize={25}>Additional</TextStyled>
+                        <TextStyled darkBlue fontSize={25} fontWeight>skills</TextStyled>
+                    </TitleStyled>
+                    <BoxSkills>
                         <Content>Content</Content>
                         <Content>Content</Content>
                         <Content>Content</Content>
-                    </BoxContent>
+                    </BoxSkills>
                 </Box>
+
                 <Box>
-                    <h2>Title3</h2>
-                    <BoxContent>
+                    <TitleStyled>
+                        <TextStyled darkBlue fontSize={25}>My</TextStyled>
+                        <TextStyled darkBlue fontSize={25} fontWeight>Portfolio</TextStyled>
+                    </TitleStyled>
+                    <BoxAbout>
                         <Content>Content</Content>
                         <Content>Content</Content>
                         <Content>Content</Content>
-                    </BoxContent>
+                    </BoxAbout>
                 </Box>
                 <Box>
                     <h2>Title4</h2>
-                    <BoxContent>
+                    <BoxAbout>
                         <Content>Content</Content>
                         <Content>Content</Content>
                         <Content>Content</Content>
-                    </BoxContent>
+                    </BoxAbout>
                 </Box>
             </Main>
             <footer>
                 <h2>Title5</h2>
-                <BoxContent>
+                <BoxAbout>
                     <Content>Content</Content>
                     <Content>Content</Content>
                     <Content>Content</Content>
                     <Content>Content</Content>
-                </BoxContent>
+                </BoxAbout>
             </footer>
         </div>
     );
@@ -65,17 +90,20 @@ function App() {
 export default App;
 
 const Header = styled.div`
+    width: 1173px;
+    height: 84px;
     position: fixed;
-    padding: 35px;
-    left: 133px;
-    top: 0px;
+    padding-top: 35px;
+    top: 0;
     display: flex;
-    background-color:white;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
 `;
 
 const Menu = styled.nav`
-/*    width: 675px;
-    height: 58px;*/
+    /*    width: 675px;
+        height: 58px;*/
     display: flex;
     align-items: center;
     gap: 45px;
@@ -85,12 +113,4 @@ const Main = styled.div`
     margin-top: 160px;
     display: flex;
     flex-direction: column;
-`;
-
-
-
-const Title = styled.h1`
-    font-size: 1.5em;
-    text-align: center;
-    color: #e91e63;
 `;
