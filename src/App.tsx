@@ -6,21 +6,58 @@ import {Box, BoxAbout, BoxSkills} from "./components/Box.styled";
 import {Content, ContentImg} from "./components/Content.styled";
 import {TextStyled} from "./components/Text.styled";
 import heroImg from "./assets/heroImg.png";
+import frontEnd from "./assets/frontEnd.png";
+import backEnd from "./assets/backEnd.png";
+import uiUx from "./assets/ux-ui.png";
 import {TitleStyled} from "./components/Title.styled";
+import Card from "./Card";
 
+export type cardsDataType = {
+    imgSrc: string
+    titleBold: string
+    titleNorm: string
+    description: string
+}
 
 function App() {
+
+    const cardsData: cardsDataType[] = [
+        {
+            imgSrc: frontEnd,
+            titleBold: 'Front-End',
+            titleNorm: 'Developer',
+            description: ' Faucibus. Faucibus. Sit sit sapien sit tempusrisu ut. Sit molestie ornare in venen.'
+        },
+        {
+            imgSrc: backEnd,
+            titleBold: 'Front-End',
+            titleNorm: 'Developer',
+            description: ' Faucibus. Faucibus. Sit sit sapien.'
+        },
+        {
+            imgSrc: uiUx,
+            titleBold: 'UI/UX',
+            titleNorm: 'Designer',
+            description: ' Faucibus. Faucibus. Sit sit sapien sit tempusrisu ut. Sit molestie ornare in venen.'
+        },
+    ]
+
     return (
         <div>
             <Header>
-                <LogoStyled><TextStyled darkBlue fontSize={25} fontWeight>Iliya</TextStyled>
-                    <TextStyled darkBlue fontSize={25}>Zolotyhin</TextStyled></LogoStyled>
-                <Menu>
-                    <LinkStyled href=""><TextStyled fontSize={25}>About</TextStyled></LinkStyled>
-                    <LinkStyled href=""><TextStyled fontSize={25}>Skills</TextStyled></LinkStyled>
-                    <LinkStyled href=""><TextStyled fontSize={25}>Portfolio</TextStyled></LinkStyled>
-                    <ButtonStyled><TextStyled white fontSize={25} fontWeight>contact Me</TextStyled></ButtonStyled>
-                </Menu>
+                <LogoStyled><TextStyled darkBlue fontSize={25} fontWeight={700}>Iliya</TextStyled>
+                    <TextStyled darkBlue fontSize={25}>Zolotyhin</TextStyled>
+                </LogoStyled>
+                <ul>
+                    <Menu role="menu">
+                        <MenuItem role="menuitem"><LinkStyled href=""><TextStyled fontSize={25}>About</TextStyled></LinkStyled></MenuItem>
+                        <MenuItem role="menuitem"><LinkStyled href=""><TextStyled fontSize={25}>Skills</TextStyled></LinkStyled></MenuItem>
+                        <MenuItem role="menuitem"><LinkStyled href=""><TextStyled fontSize={25}>Portfolio</TextStyled></LinkStyled></MenuItem>
+                        <ButtonStyled><TextStyled white fontSize={25} fontWeight={600}>contact Me</TextStyled></ButtonStyled>
+                        {/*<ButtonStyled aria-label ="закрыть"><TextStyled white fontSize={25} fontWeight> X </TextStyled></ButtonStyled>*/}
+                    </Menu>
+                </ul>
+
             </Header>
             <Main>
                 <Box>
@@ -28,7 +65,7 @@ function App() {
                         <Content>
                             <TextStyled darkBlue fontSize={35}>Hi !</TextStyled>
                             <TitleStyled justifyContent={'left'}>
-                                <TextStyled darkBlue fontSize={35} fontWeight>I'm Zolotyhin Ilya.<br/> a Front-End
+                                <TextStyled darkBlue fontSize={35} fontWeight={600}>I'm Zolotyhin Ilya.<br/> a Front-End
                                     Developer</TextStyled>
                             </TitleStyled>
                             <TextStyled fontSize={23}>I have experience in creating SPA using React, Redux, TypeScript.
@@ -45,28 +82,23 @@ function App() {
                 <Box>
                     <TitleStyled>
                         <TextStyled darkBlue fontSize={25}>Additional</TextStyled>
-                        <TextStyled darkBlue fontSize={25} fontWeight>skills</TextStyled>
+                        <TextStyled darkBlue fontSize={25} fontWeight={600}>skills</TextStyled>
                     </TitleStyled>
                     <BoxSkills>
-                        <Content>Content</Content>
-                        <Content>Content</Content>
-                        <Content>Content</Content>
+                        {
+                            cardsData.map((card, i) => {
+                                return <Card key={i} imgSrc={card.imgSrc} titleBold={card.titleBold}
+                                             titleNorm={card.titleNorm} description={card.description}/>;
+                            })
+                        }
                     </BoxSkills>
                 </Box>
 
                 <Box>
                     <TitleStyled>
                         <TextStyled darkBlue fontSize={25}>My</TextStyled>
-                        <TextStyled darkBlue fontSize={25} fontWeight>Portfolio</TextStyled>
+                        <TextStyled darkBlue fontSize={25} fontWeight={600}>Portfolio</TextStyled>
                     </TitleStyled>
-                    <BoxAbout>
-                        <Content>Content</Content>
-                        <Content>Content</Content>
-                        <Content>Content</Content>
-                    </BoxAbout>
-                </Box>
-                <Box>
-                    <h2>Title4</h2>
                     <BoxAbout>
                         <Content>Content</Content>
                         <Content>Content</Content>
@@ -75,7 +107,10 @@ function App() {
                 </Box>
             </Main>
             <footer>
-                <h2>Title5</h2>
+                <TitleStyled>
+                    <TextStyled darkBlue fontSize={25}>Contact</TextStyled>
+                    <TextStyled darkBlue fontSize={25} fontWeight={600}>Me</TextStyled>
+                </TitleStyled>
                 <BoxAbout>
                     <Content>Content</Content>
                     <Content>Content</Content>
@@ -89,7 +124,7 @@ function App() {
 
 export default App;
 
-const Header = styled.div`
+const Header = styled.header`
     width: 1173px;
     height: 84px;
     position: fixed;
@@ -101,15 +136,18 @@ const Header = styled.div`
     background-color: white;
 `;
 
-const Menu = styled.nav`
-    /*    width: 675px;
-        height: 58px;*/
+const Menu = styled.ul`
     display: flex;
     align-items: center;
     gap: 45px;
+    text-decoration: none;
 `;
 
-const Main = styled.div`
+const MenuItem = styled.li`
+    display: flex;
+`;
+
+const Main = styled.section `
     margin-top: 160px;
     display: flex;
     flex-direction: column;

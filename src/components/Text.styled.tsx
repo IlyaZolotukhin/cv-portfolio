@@ -5,11 +5,12 @@ type TextStyledType = {
     darkBlue?: boolean
     lightBlue?: boolean
     white?: boolean
-    fontWeight?: boolean
+    fontWeight?: number
     fontSize: number
 }
 export const TextStyled = styled.p<TextStyledType>`
     font-size: ${props => props.fontSize || 16 }px;
+    font-weight: ${props => props.fontWeight || 'normal' };
     color: ${ThemeStyled.colors.textColor.black};
     
     ${props => props.white && css<TextStyledType>`
@@ -22,9 +23,5 @@ export const TextStyled = styled.p<TextStyledType>`
 
     ${props => props.lightBlue && css<TextStyledType>`
         color: ${ThemeStyled.colors.textColor.light};
-    `}
-
-    ${props => props.fontWeight && css<TextStyledType>`
-        font-weight: bold;
     `}
 `
