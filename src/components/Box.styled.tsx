@@ -28,3 +28,13 @@ export const BoxSkills = styled(Box)`
         flex-direction: column;
     }
 `;
+
+export const BoxPortfolio = styled(Box)`
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    
+    @media ${ThemeStyled.media.tablet}{
+        flex-direction: column;
+    }
+`;

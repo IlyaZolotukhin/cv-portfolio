@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {ButtonStyled} from "./components/Button.styled";
 import {LogoStyled} from "./components/Logo.styled";
 import {LinkStyled} from "./components/Link.styled";
-import {Box, BoxAbout, BoxSkills} from "./components/Box.styled";
+import {Box, BoxAbout, BoxPortfolio, BoxSkills} from "./components/Box.styled";
 import {Content, ContentImg} from "./components/Content.styled";
 import {TextStyled} from "./components/Text.styled";
 import heroImg from "./assets/heroImg.png";
@@ -10,6 +10,9 @@ import {TitleStyled} from "./components/Title.styled";
 import CardSkill from "./CardSkill";
 import CardPortfolio from "./CardPortfolio";
 import {skillCards} from "./data/skillCards";
+import {portfolioCards} from "./data/portfolioCards";
+import CardContacts from "./CardContacts";
+import {contactCards} from "./data/contactCards";
 
 function App() {
 
@@ -70,28 +73,30 @@ function App() {
                         <TextStyled darkBlue fontSize={25}>My</TextStyled>
                         <TextStyled darkBlue fontSize={25} fontWeight={600}>Portfolio</TextStyled>
                     </TitleStyled>
-                    <BoxAbout>
+                    <BoxPortfolio>
                         {
-                            skillCards.map((card, i) => {
-                                return <CardPortfolio key={i} imgSrc={card.imgSrc} titleBold={card.titleBold}
-                                                  titleNorm={card.titleNorm} description={card.description}/>;
+                            portfolioCards.map((card, i) => {
+                                return <CardPortfolio key={i} imgSrc={card.imgSrc} title={card.title} bgImg={card.bgImg}
+                                                      description={card.description} titleImg={card.titleImg}/>;
                             })
                         }
-                    </BoxAbout>
+                    </BoxPortfolio>
                 </Box>
             </Main>
-            <footer>
+            <Footer>
                 <TitleStyled>
                     <TextStyled darkBlue fontSize={25}>Contact</TextStyled>
                     <TextStyled darkBlue fontSize={25} fontWeight={600}>Me</TextStyled>
                 </TitleStyled>
                 <BoxAbout>
-                    <Content>Content</Content>
-                    <Content>Content</Content>
-                    <Content>Content</Content>
-                    <Content>Content</Content>
+                    {
+                        contactCards.map((card, i) => {
+                            return <CardContacts key={i} imgVector={card.imgVector} title={card.title}
+                                                 icon={card.icon}/>;
+                        })
+                    }
                 </BoxAbout>
-            </footer>
+            </Footer>
         </div>
     );
 }
@@ -102,7 +107,7 @@ const Header = styled.header`
     width: 1173px;
     height: 84px;
     position: fixed;
-    padding-top: 35px;
+    //padding-top: 35px;
     top: 0;
     display: flex;
     justify-content: space-between;
@@ -122,7 +127,13 @@ const MenuItem = styled.li`
 `;
 
 const Main = styled.section `
-    margin-top: 160px;
+    margin-top: 160px; 
     display: flex;
     flex-direction: column;
+`;
+
+const Footer = styled.footer `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;

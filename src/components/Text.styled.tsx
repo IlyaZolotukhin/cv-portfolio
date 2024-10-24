@@ -9,6 +9,7 @@ type TextStyledType = {
     fontSize: number
 }
 export const TextStyled = styled.p<TextStyledType>`
+    display: flex;
     font-size: ${props => props.fontSize || 16 }px;
     font-weight: ${props => props.fontWeight || 'normal' };
     color: ${ThemeStyled.colors.textColor.black};

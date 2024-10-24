@@ -1,6 +1,6 @@
 import frontEnd from "../assets/frontEnd.png";
 import backEnd from "../assets/backEnd.png";
-import uiUx from "../assets/ux-ui.png";
+import design from "../assets/Design.png";
 import {skillCardsType} from "./types";
 
 export const skillCards: skillCardsType[] = [
@@ -17,7 +17,7 @@ export const skillCards: skillCardsType[] = [
         description: '(NodeJS, ?, ?)'
     },
     {
-        imgSrc: uiUx,
+        imgSrc: design,
         titleBold: 'UI/UX',
         titleNorm: 'Designer',
         description: '(Figma, Zeplin, Adobe XD)'
