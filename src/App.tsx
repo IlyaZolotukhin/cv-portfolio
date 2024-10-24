@@ -6,41 +6,12 @@ import {Box, BoxAbout, BoxSkills} from "./components/Box.styled";
 import {Content, ContentImg} from "./components/Content.styled";
 import {TextStyled} from "./components/Text.styled";
 import heroImg from "./assets/heroImg.png";
-import frontEnd from "./assets/frontEnd.png";
-import backEnd from "./assets/backEnd.png";
-import uiUx from "./assets/ux-ui.png";
 import {TitleStyled} from "./components/Title.styled";
-import Card from "./Card";
-
-export type cardsDataType = {
-    imgSrc: string
-    titleBold: string
-    titleNorm: string
-    description: string
-}
+import CardSkill from "./CardSkill";
+import CardPortfolio from "./CardPortfolio";
+import {skillCards} from "./data/skillCards";
 
 function App() {
-
-    const cardsData: cardsDataType[] = [
-        {
-            imgSrc: frontEnd,
-            titleBold: 'Front-End',
-            titleNorm: 'Developer',
-            description: ' Faucibus. Faucibus. Sit sit sapien sit tempusrisu ut. Sit molestie ornare in venen.'
-        },
-        {
-            imgSrc: backEnd,
-            titleBold: 'Front-End',
-            titleNorm: 'Developer',
-            description: ' Faucibus. Faucibus. Sit sit sapien.'
-        },
-        {
-            imgSrc: uiUx,
-            titleBold: 'UI/UX',
-            titleNorm: 'Designer',
-            description: ' Faucibus. Faucibus. Sit sit sapien sit tempusrisu ut. Sit molestie ornare in venen.'
-        },
-    ]
 
     return (
         <div>
@@ -49,10 +20,10 @@ function App() {
                     <TextStyled darkBlue fontSize={25}>Zolotyhin</TextStyled>
                 </LogoStyled>
                 <ul>
-                    <Menu role="menu">
-                        <MenuItem role="menuitem"><LinkStyled href=""><TextStyled fontSize={25}>About</TextStyled></LinkStyled></MenuItem>
-                        <MenuItem role="menuitem"><LinkStyled href=""><TextStyled fontSize={25}>Skills</TextStyled></LinkStyled></MenuItem>
-                        <MenuItem role="menuitem"><LinkStyled href=""><TextStyled fontSize={25}>Portfolio</TextStyled></LinkStyled></MenuItem>
+                    <Menu>
+                        <MenuItem><LinkStyled href=""><TextStyled fontSize={25}>About</TextStyled></LinkStyled></MenuItem>
+                        <MenuItem><LinkStyled href=""><TextStyled fontSize={25}>Skills</TextStyled></LinkStyled></MenuItem>
+                        <MenuItem><LinkStyled href=""><TextStyled fontSize={25}>Portfolio</TextStyled></LinkStyled></MenuItem>
                         <ButtonStyled><TextStyled white fontSize={25} fontWeight={600}>contact Me</TextStyled></ButtonStyled>
                         {/*<ButtonStyled aria-label ="закрыть"><TextStyled white fontSize={25} fontWeight> X </TextStyled></ButtonStyled>*/}
                     </Menu>
@@ -86,9 +57,9 @@ function App() {
                     </TitleStyled>
                     <BoxSkills>
                         {
-                            cardsData.map((card, i) => {
-                                return <Card key={i} imgSrc={card.imgSrc} titleBold={card.titleBold}
-                                             titleNorm={card.titleNorm} description={card.description}/>;
+                            skillCards.map((card, i) => {
+                                return <CardSkill key={i} imgSrc={card.imgSrc} titleBold={card.titleBold}
+                                                  titleNorm={card.titleNorm} description={card.description}/>;
                             })
                         }
                     </BoxSkills>
@@ -100,9 +71,12 @@ function App() {
                         <TextStyled darkBlue fontSize={25} fontWeight={600}>Portfolio</TextStyled>
                     </TitleStyled>
                     <BoxAbout>
-                        <Content>Content</Content>
-                        <Content>Content</Content>
-                        <Content>Content</Content>
+                        {
+                            skillCards.map((card, i) => {
+                                return <CardPortfolio key={i} imgSrc={card.imgSrc} titleBold={card.titleBold}
+                                                  titleNorm={card.titleNorm} description={card.description}/>;
+                            })
+                        }
                     </BoxAbout>
                 </Box>
             </Main>

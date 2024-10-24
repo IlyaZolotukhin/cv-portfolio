@@ -20,12 +20,9 @@ export const BoxAbout = styled(Box)`
 `;
 
 export const BoxSkills = styled(Box)`
-    width: 1173px;
-    height: 467px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    gap: 32px;
     
     @media ${ThemeStyled.media.tablet}{
         flex-direction: column;

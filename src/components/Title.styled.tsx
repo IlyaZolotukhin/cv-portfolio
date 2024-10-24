@@ -10,3 +10,7 @@ export const TitleStyled = styled.h1<TitleStyledType>`
     gap: 8px;
     padding-bottom: 32px;
 `;
+
+export const TitleCard = styled(TitleStyled)`
+    padding-bottom: 0;
+`;
