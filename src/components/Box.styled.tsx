@@ -1,16 +1,10 @@
 import styled from "styled-components";
 import {ThemeStyled} from "../styles/Theme.styled";
 
-export const Box = styled.div`
-    width: 1173px;
+export const BoxAbout = styled.div`
+    width: 1167px;
     height: 467px;
     display: flex;
-    flex-direction: column;
-`;
-
-export const BoxAbout = styled(Box)`
-    display: flex;
-    flex-direction: row;
     gap: 32px;  
     
     @media ${ThemeStyled.media.tablet}{
@@ -19,20 +13,33 @@ export const BoxAbout = styled(Box)`
     }
 `;
 
-export const BoxSkills = styled(Box)`
+export const BoxSkills = styled.div`
+    width: 1141px;
+    height: 393px;
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
     
     @media ${ThemeStyled.media.tablet}{
         flex-direction: column;
     }
 `;
 
-export const BoxPortfolio = styled(Box)`
+export const BoxPortfolio = styled.div`
+    width: 1141px;
+    height: 374px;
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
+    
+    @media ${ThemeStyled.media.tablet}{
+        flex-direction: column;
+    }
+`;
+
+export const BoxContacts = styled.div`
+    width: 1141px;
+    height: 349px;
+    display: flex;
+    gap: 130px;
     
     @media ${ThemeStyled.media.tablet}{
         flex-direction: column;

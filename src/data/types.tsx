@@ -1,5 +1,3 @@
-import Vector from "../assets/Vector.png";
-
 export type skillCardsType = {
     imgSrc: string
     titleBold: string
@@ -16,6 +14,7 @@ export type portfolioCardsType = {
 }
 
 export type contactCardsType = {
+    imgHover?: string
     imgVector: string
     title: string
     icon: string
