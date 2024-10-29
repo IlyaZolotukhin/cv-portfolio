@@ -14,6 +14,7 @@ import {skillCards} from "./data/skillCards";
 import {portfolioCards} from "./data/portfolioCards";
 import CardContacts from "./CardContacts";
 import {contactCards} from "./data/contactCards";
+import {ThemeStyled} from "./styles/Theme.styled";
 
 function App() {
 
@@ -133,10 +134,13 @@ const Footer = styled.footer`
     width: 1719px;
     height: 330px;
     //background-color: blue;
+    @media ${ThemeStyled.media.tablet}{
+        width: auto;
+        height: auto;
+    }
 `;
 
 const FooterImg = styled.img`
     width: 1719px;
     height: 330px;
-    //background-color: blue;
 `;
