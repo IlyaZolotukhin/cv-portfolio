@@ -4,6 +4,7 @@ type TitleStyledType = {
     justifyContent?: string
 }
 export const TitleStyled = styled.h1<TitleStyledType>`
+    margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: ${props => props.justifyContent || "center" };

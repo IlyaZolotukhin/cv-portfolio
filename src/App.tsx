@@ -15,17 +15,26 @@ import {portfolioCards} from "./data/portfolioCards";
 import CardContacts from "./CardContacts";
 import {contactCards} from "./data/contactCards";
 import {ThemeStyled} from "./styles/Theme.styled";
+import {useState} from "react";
 
 function App() {
 
+    const [isMenuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!isMenuOpen);
+    }
+
     return (
-        <div>
+        <>
             <Header>
                 <LogoStyled><TextStyled darkBlue fontSize={25} fontWeight={700}>Iliya</TextStyled>
                     <TextStyled darkBlue fontSize={25}>Zolotyhin</TextStyled>
                 </LogoStyled>
-                <ul>
-                    <Menu>
+                        <BurgerIcon onClick={toggleMenu}>
+                            &#9776;
+                        </BurgerIcon>
+                        {isMenuOpen ? <div> </div> :<Menu>
                         <MenuItem><LinkStyled href=""><TextStyled
                             fontSize={25}>About</TextStyled></LinkStyled></MenuItem>
                         <MenuItem><LinkStyled href=""><TextStyled
@@ -34,9 +43,8 @@ function App() {
                             fontSize={25}>Portfolio</TextStyled></LinkStyled></MenuItem>
                         <ButtonStyled><TextStyled white fontSize={25} fontWeight={600}>contact
                             Me</TextStyled></ButtonStyled>
-                        {/*<ButtonStyled aria-label ="закрыть"><TextStyled white fontSize={25} fontWeight> X </TextStyled></ButtonStyled>*/}
-                    </Menu>
-                </ul>
+                    </Menu>}
+
             </Header>
             <Main>
                 <BoxAbout>
@@ -53,7 +61,7 @@ function App() {
                             I usually spend my free time reading IT-literature (M.Fauler),
                             Codewars and improving my English. Open to your suggestions.</TextStyled>
                     </Content>
-                    <ContentImg><img src={heroImg} alt="heroImg"/></ContentImg>
+                    <ContentImg src={heroImg} alt="heroImg"/>
                 </BoxAbout>
                 <TitleStyled>
                     <TextStyled darkBlue fontSize={25}>Additional</TextStyled>
@@ -95,29 +103,54 @@ function App() {
             <Footer>
                 <FooterImg src={footerImg} alt="Footer"/>
             </Footer>
-        </div>
+        </>
     );
 }
 
 export default App;
 
 const Header = styled.header`
-    width: 1173px;
+    width: 1440px;
     height: 84px;
+    padding: 0 133px;
     position: fixed;
     //padding-top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: white;
+
+    @media ${ThemeStyled.media.tablet}{
+        width: 428px;
+
+    }
 `;
 
+const BurgerIcon = styled.div`
+    display: none;
+    @media ${ThemeStyled.media.tablet} {
+        font-size: 25px;
+        font-weight: bold;
+        display: flex;
+        margin-left: 20px;
+        cursor: pointer;
+    }`
+;
+
+
 const Menu = styled.ul`
+    margin: 0;
     display: flex;
     align-items: center;
     gap: 45px;
     text-decoration: none;
+    
+    @media ${ThemeStyled.media.tablet} {
+        display: none;
+    }
 `;
 
 const MenuItem = styled.li`
@@ -131,16 +164,15 @@ const Main = styled.section`
 `;
 
 const Footer = styled.footer`
-    width: 1719px;
     height: 330px;
-    //background-color: blue;
     @media ${ThemeStyled.media.tablet}{
-        width: auto;
-        height: auto;
+        width: 428px;   
+        margin: 0;
     }
 `;
 
 const FooterImg = styled.img`
-    width: 1719px;
+    //width: 1719px;
     height: 330px;
+
 `;
