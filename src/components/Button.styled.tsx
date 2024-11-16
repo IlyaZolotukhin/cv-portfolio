@@ -13,5 +13,6 @@ export const ButtonStyled = styled.button`
 
     &:hover {
         background-color: ${ThemeStyled.colors.navy};
+        cursor: pointer;
     }
 `

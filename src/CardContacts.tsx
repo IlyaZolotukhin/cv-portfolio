@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {TextStyled} from "./components/Text.styled";
 import {contactCardsType} from "./data/types";
 import {LinkStyled} from "./components/Link.styled";
+import {ThemeStyled} from "./styles/Theme.styled";
 
 const CardContacts = (props: contactCardsType) => {
     return (
@@ -37,6 +38,9 @@ const CardBox = styled.div<CardBoxType>`
     background-position-y: 19px;
     &:hover {
         background-image: url(${props => props.imgHover || 'none'});
+    }
+    @media ${ThemeStyled.media.tablet}{
+        background-position-x: 25px;
     }
 `;
 const Icon = styled.img`

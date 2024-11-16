@@ -14,12 +14,12 @@ export const skillCards: skillCardsType[] = [
         imgSrc: backEnd,
         titleBold: 'Back-End',
         titleNorm: 'Developer',
-        description: '(NodeJS, ?, ?)'
+        description: '(NodeJS, Firebase)'
     },
     {
         imgSrc: design,
         titleBold: 'UI/UX',
         titleNorm: 'Designer',
-        description: '(Figma, Zeplin, Adobe XD)'
+        description: '(Figma, Adobe XD)'
     },
 ]

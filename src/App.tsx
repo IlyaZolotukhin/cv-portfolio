@@ -31,19 +31,19 @@ function App() {
                 <LogoStyled><TextStyled darkBlue fontSize={25} fontWeight={700}>Iliya</TextStyled>
                     <TextStyled darkBlue fontSize={25}>Zolotyhin</TextStyled>
                 </LogoStyled>
-                        <BurgerIcon onClick={toggleMenu}>
-                            &#9776;
-                        </BurgerIcon>
-                        {isMenuOpen ? <div> </div> :<Menu>
-                        <MenuItem><LinkStyled href=""><TextStyled
-                            fontSize={25}>About</TextStyled></LinkStyled></MenuItem>
-                        <MenuItem><LinkStyled href=""><TextStyled
-                            fontSize={25}>Skills</TextStyled></LinkStyled></MenuItem>
-                        <MenuItem><LinkStyled href=""><TextStyled
-                            fontSize={25}>Portfolio</TextStyled></LinkStyled></MenuItem>
-                        <ButtonStyled><TextStyled white fontSize={25} fontWeight={600}>contact
-                            Me</TextStyled></ButtonStyled>
-                    </Menu>}
+                <BurgerIcon onClick={toggleMenu}>
+                    &#9776;
+                </BurgerIcon>
+                {isMenuOpen ? <div>bbbb</div> : <Menu>
+                    <MenuItem><LinkStyled href=""><TextStyled
+                        fontSize={25}>About</TextStyled></LinkStyled></MenuItem>
+                    <MenuItem><LinkStyled href=""><TextStyled
+                        fontSize={25}>Skills</TextStyled></LinkStyled></MenuItem>
+                    <MenuItem><LinkStyled href=""><TextStyled
+                        fontSize={25}>Portfolio</TextStyled></LinkStyled></MenuItem>
+                    <ButtonStyled><TextStyled white fontSize={25} fontWeight={600}>contact
+                        Me</TextStyled></ButtonStyled>
+                </Menu>}
 
             </Header>
             <Main>
@@ -70,8 +70,10 @@ function App() {
                 <BoxSkills>
                     {
                         skillCards.map((card, i) => {
-                            return <CardSkill key={i} imgSrc={card.imgSrc} titleBold={card.titleBold}
-                                              titleNorm={card.titleNorm} description={card.description}/>;
+                            return <LinkStyled href=""><CardSkill key={i} imgSrc={card.imgSrc}
+                                                                  titleBold={card.titleBold}
+                                                                  titleNorm={card.titleNorm}
+                                                                  description={card.description}/></LinkStyled>;
                         })
                     }
                 </BoxSkills>
@@ -82,8 +84,10 @@ function App() {
                 <BoxPortfolio>
                     {
                         portfolioCards.map((card, i) => {
-                            return <CardPortfolio key={i} imgSrc={card.imgSrc} title={card.title} bgImg={card.bgImg}
-                                                  description={card.description} titleImg={card.titleImg}/>;
+                            return <LinkStyled href=""><CardPortfolio key={i} imgSrc={card.imgSrc} title={card.title}
+                                                                      bgImg={card.bgImg}
+                                                                      description={card.description}
+                                                                      titleImg={card.titleImg}/></LinkStyled>;
                         })
                     }
                 </BoxPortfolio>
@@ -123,9 +127,9 @@ const Header = styled.header`
     align-items: center;
     background-color: white;
 
-    @media ${ThemeStyled.media.tablet}{
-        width: 428px;
-
+    @media ${ThemeStyled.media.tablet} {
+        
+        
     }
 `;
 
@@ -147,7 +151,7 @@ const Menu = styled.ul`
     align-items: center;
     gap: 45px;
     text-decoration: none;
-    
+
     @media ${ThemeStyled.media.tablet} {
         display: none;
     }
@@ -165,14 +169,18 @@ const Main = styled.section`
 
 const Footer = styled.footer`
     height: 330px;
-    @media ${ThemeStyled.media.tablet}{
-        width: 428px;   
+    max-width: 100vw;
+    @media ${ThemeStyled.media.tablet} {
+        width: 100%;
         margin: 0;
     }
 `;
 
 const FooterImg = styled.img`
-    //width: 1719px;
+    width: 100%;
     height: 330px;
-
+    @media ${ThemeStyled.media.tablet} {
+        width: 100%;
+        margin: 0;
+    }
 `;

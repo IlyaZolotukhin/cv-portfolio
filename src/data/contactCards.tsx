@@ -15,12 +15,6 @@ export const contactCards: contactCardsType[] = [
     {
         imgHover: imgHover,
         imgVector: Vector,
-        title: 'Telegram',
-        icon: Telega
-    },
-    {
-        imgHover: imgHover,
-        imgVector: Vector,
         title: 'Email',
         icon: Email
     },
@@ -29,5 +23,11 @@ export const contactCards: contactCardsType[] = [
         imgVector: Vector,
         title: 'Telephon',
         icon: Telephon
+    },
+    {
+        imgHover: imgHover,
+        imgVector: Vector,
+        title: 'Telegram',
+        icon: Telega
     },
 ]

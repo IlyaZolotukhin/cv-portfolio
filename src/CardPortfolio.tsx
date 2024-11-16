@@ -35,6 +35,9 @@ const CardBox = styled.div<CardBoxType>`
     box-shadow: 0 5px 26px 5px rgba(0, 0, 0, 0.17);
     border-radius: 10px;
     padding: 20px 24px 26px;
+    &:hover {
+        box-shadow: 0 5px 26px 5px rgba(0, 0, 0, 0.5);
+    }
 `
 
 const TitleImg = styled.img`
