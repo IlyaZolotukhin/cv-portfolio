@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/cv-portfolio/static/js/main.ad2ff803.js",
+    "main.js": "/cv-portfolio/static/js/main.ecdbd129.js",
     "static/js/787.25eaef86.chunk.js": "/cv-portfolio/static/js/787.25eaef86.chunk.js",
     "static/media/e-commerce 2.png": "/cv-portfolio/static/media/e-commerce 2.eeb3ea168322e260ccc0.png",
     "static/media/Edtech 3.png": "/cv-portfolio/static/media/Edtech 3.252d9d9265900602cf89.png",
@@ -11,10 +11,10 @@
     "static/media/backEnd.png": "/cv-portfolio/static/media/backEnd.aacb5feb50ba2713ba45.png",
     "static/media/Screenshot (162) 1.png": "/cv-portfolio/static/media/Screenshot (162) 1.060b451977634e682eec.png",
     "index.html": "/cv-portfolio/index.html",
-    "main.ad2ff803.js.map": "/cv-portfolio/static/js/main.ad2ff803.js.map",
+    "main.ecdbd129.js.map": "/cv-portfolio/static/js/main.ecdbd129.js.map",
     "787.25eaef86.chunk.js.map": "/cv-portfolio/static/js/787.25eaef86.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.ad2ff803.js"
+    "static/js/main.ecdbd129.js"
   ]
 }
