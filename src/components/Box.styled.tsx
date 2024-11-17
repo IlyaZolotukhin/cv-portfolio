@@ -10,6 +10,7 @@ export const BoxAbout = styled.div`
     
     @media ${ThemeStyled.media.tablet}{
         margin-top: 350px;// доработать
+        margin-bottom: 280px;
         flex-direction: column-reverse;
     }
 `;
@@ -21,6 +22,7 @@ export const BoxSkills = styled.div`
     justify-content: space-between;
     
     @media ${ThemeStyled.media.tablet}{
+        gap: 30px;
         width: auto;
         height: auto;
         flex-direction: column;
@@ -34,6 +36,7 @@ export const BoxPortfolio = styled.div`
     justify-content: space-between;
     
     @media ${ThemeStyled.media.tablet}{
+        gap: 30px;
         width: auto;
         height: auto;
         flex-direction: column;
@@ -47,6 +50,7 @@ export const BoxContacts = styled.div`
     gap: 130px;
     
     @media ${ThemeStyled.media.tablet}{
+        gap: 30px;
         width: auto;
         height: auto;
         flex-direction: column;

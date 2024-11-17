@@ -7,6 +7,7 @@ type TextStyledType = {
     white?: boolean
     fontWeight?: number
     fontSize: number
+    paddingTop?: number
 }
 export const TextStyled = styled.p<TextStyledType>`
     display: flex;    
@@ -14,6 +15,7 @@ export const TextStyled = styled.p<TextStyledType>`
     font-size: ${props => props.fontSize || 16 }px;
     font-weight: ${props => props.fontWeight || 'normal' };
     color: ${ThemeStyled.colors.textColor.black};
+    padding-top: ${props => props.paddingTop || 0 }px;
     
     ${props => props.white && css<TextStyledType>`
         color: ${ThemeStyled.colors.textColor.white};

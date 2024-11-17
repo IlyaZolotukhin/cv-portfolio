@@ -44,17 +44,14 @@ function App() {
                     <ButtonStyled><TextStyled white fontSize={25} fontWeight={600}>contact
                         Me</TextStyled></ButtonStyled>
                 </Menu>}
-
             </Header>
             <Main>
                 <BoxAbout>
                     <Content>
                         <TextStyled darkBlue fontSize={35}>Hi !</TextStyled>
-                        <TitleStyled justifyContent={'left'}>
-                            <TextStyled darkBlue fontSize={35} fontWeight={600}>I'm Zolotyhin Ilya.<br/> a Front-End
-                                Developer</TextStyled>
-                        </TitleStyled>
-                        <TextStyled fontSize={23}>I have experience in creating SPA using React, Redux, TypeScript.
+                        <TextStyled darkBlue fontSize={35} fontWeight={600}>I'm Zolotyhin Ilya.<br/> a Front-End
+                            Developer</TextStyled>
+                        <TextStyled paddingTop={30} fontSize={23}>I have experience in creating SPA using React, Redux, TypeScript.
                             Knowledge in user interface, testing, and debugging processes. I'm improving my skills
                             in this direction
                             and plan to expand them with new technologies, such as Angular.<br/>
@@ -98,7 +95,7 @@ function App() {
                 <BoxContacts>
                     {
                         contactCards.map((card, i) => {
-                            return <CardContacts key={i} imgVector={card.imgVector} title={card.title}
+                            return <CardContacts key={i} contact={card.contact} imgVector={card.imgVector} title={card.title}
                                                  icon={card.icon} imgHover={card.imgHover}/>;
                         })
                     }
@@ -118,7 +115,7 @@ const Header = styled.header`
     height: 84px;
     padding: 0 133px;
     position: fixed;
-    //padding-top: 35px;
+    z-index: 1;
     left: 50%;
     transform: translateX(-50%);
     top: 0;
@@ -126,12 +123,9 @@ const Header = styled.header`
     justify-content: space-between;
     align-items: center;
     background-color: white;
-
     @media ${ThemeStyled.media.tablet} {
-        
-        
-    }
-`;
+        padding: 30px;
+    }`;
 
 const BurgerIcon = styled.div`
     display: none;
@@ -139,11 +133,10 @@ const BurgerIcon = styled.div`
         font-size: 25px;
         font-weight: bold;
         display: flex;
-        margin-left: 20px;
+        margin: 0;
         cursor: pointer;
     }`
 ;
-
 
 const Menu = styled.ul`
     margin: 0;
@@ -151,7 +144,6 @@ const Menu = styled.ul`
     align-items: center;
     gap: 45px;
     text-decoration: none;
-
     @media ${ThemeStyled.media.tablet} {
         display: none;
     }
@@ -165,6 +157,10 @@ const Main = styled.section`
     margin-top: 160px;
     display: flex;
     flex-direction: column;
+    @media ${ThemeStyled.media.tablet} {
+        margin-top: 0;
+        padding: 5px;
+    }
 `;
 
 const Footer = styled.footer`
@@ -172,6 +168,7 @@ const Footer = styled.footer`
     max-width: 100vw;
     @media ${ThemeStyled.media.tablet} {
         width: 100%;
+        height: 100px;
         margin: 0;
     }
 `;
@@ -181,6 +178,7 @@ const FooterImg = styled.img`
     height: 330px;
     @media ${ThemeStyled.media.tablet} {
         width: 100%;
+        height: 100px;
         margin: 0;
     }
 `;

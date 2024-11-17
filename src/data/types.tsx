@@ -18,4 +18,5 @@ export type contactCardsType = {
     imgVector: string
     title: string
     icon: string
+    contact: string
 }

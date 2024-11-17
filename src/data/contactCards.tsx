@@ -10,24 +10,28 @@ export const contactCards: contactCardsType[] = [
         imgHover: imgHover,
         imgVector: Vector,
         title: 'Github',
-        icon: GitHub
+        icon: GitHub,
+        contact: "https://github.com/IlyaZolotukhin"
     },
     {
         imgHover: imgHover,
         imgVector: Vector,
         title: 'Email',
-        icon: Email
+        icon: Email,
+        contact: `mailto:"1zolotyhin1@gmail.com"`
     },
     {
         imgHover: imgHover,
         imgVector: Vector,
         title: 'Telephon',
-        icon: Telephon
+        icon: Telephon,
+        contact: "tel:89915036422"
     },
     {
         imgHover: imgHover,
         imgVector: Vector,
         title: 'Telegram',
-        icon: Telega
+        icon: Telega,
+        contact: "https://t.me/zltkhin"
     },
 ]

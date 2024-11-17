@@ -7,7 +7,7 @@ import {ThemeStyled} from "./styles/Theme.styled";
 const CardContacts = (props: contactCardsType) => {
     return (
         <CardBox imgHover={props.imgHover} bgImg={props.imgVector}>
-            <LinkStyled href="">
+            <LinkStyled href={props.contact}>
             <Icon src={props.icon} alt={props.title}/>
             <TextStyled darkBlue fontSize={25} fontWeight={600}>
                 {props.title}
