@@ -9,8 +9,8 @@ export const BoxAbout = styled.div`
     margin-bottom: 118px;
     
     @media ${ThemeStyled.media.tablet}{
-        margin-top: 350px;// доработать
-        margin-bottom: 280px;
+        margin-top: 400px;
+        margin-bottom: 150px;
         flex-direction: column-reverse;
     }
 `;
@@ -20,6 +20,7 @@ export const BoxSkills = styled.div`
     height: 393px;
     display: flex;
     justify-content: space-between;
+    gap: 10px;
     
     @media ${ThemeStyled.media.tablet}{
         gap: 30px;
@@ -30,10 +31,12 @@ export const BoxSkills = styled.div`
 `;
 
 export const BoxPortfolio = styled.div`
+    
     width: 1141px;
     height: 374px;
     display: flex;
     justify-content: space-between;
+    gap: 10px;
     
     @media ${ThemeStyled.media.tablet}{
         gap: 30px;
@@ -47,7 +50,7 @@ export const BoxContacts = styled.div`
     width: 1141px;
     height: 349px;
     display: flex;
-    gap: 130px;
+    //gap: 130px;
     
     @media ${ThemeStyled.media.tablet}{
         gap: 30px;

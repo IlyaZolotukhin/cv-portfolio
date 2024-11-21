@@ -6,14 +6,14 @@ import {ThemeStyled} from "./styles/Theme.styled";
 
 const CardContacts = (props: contactCardsType) => {
     return (
-        <CardBox imgHover={props.imgHover} bgImg={props.imgVector}>
-            <LinkStyled href={props.contact}>
-            <Icon src={props.icon} alt={props.title}/>
-            <TextStyled darkBlue fontSize={25} fontWeight={600}>
-                {props.title}
-            </TextStyled>
-            </LinkStyled>
-        </CardBox>
+        <LinkStyled href={props.contact}>
+            <CardBox imgHover={props.imgHover} bgImg={props.imgVector}>
+                <Icon src={props.icon} alt={props.title}/>
+                <TextStyled darkBlue fontSize={25} fontWeight={600}>
+                    {props.title}
+                </TextStyled>
+            </CardBox>
+        </LinkStyled>
     );
 };
 
@@ -34,12 +34,14 @@ const CardBox = styled.div<CardBoxType>`
     background-image: url(${props => props.bgImg || 'none'});
     background-size: 166px;
     background-repeat: no-repeat;
-    background-position-x: 0;
+    background-position-x: 30px;
     background-position-y: 19px;
+
     &:hover {
         background-image: url(${props => props.imgHover || 'none'});
     }
-    @media ${ThemeStyled.media.tablet}{
+
+    @media ${ThemeStyled.media.tablet} {
         background-position-x: 25px;
     }
 `;
