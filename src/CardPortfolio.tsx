@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {TextStyled} from "./components/Text.styled";
 import {portfolioCardsType} from "./data/types";
+import {ThemeStyled} from "./styles/Theme.styled";
 
 const CardPortfolio = (props: portfolioCardsType) => {
     return (
@@ -50,5 +51,8 @@ const Image = styled.img`
     width: 285px;
     height: 164px;
     margin: 15px 12px 16px 25px;
+    @media ${ThemeStyled.media.tablet}{
+        margin: 15px 12px 16px 5px;
+    }
 
 `

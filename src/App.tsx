@@ -159,7 +159,6 @@ const Main = styled.section`
     flex-direction: column;
     @media ${ThemeStyled.media.tablet} {
         margin-top: 0;
-        padding: 5px;
     }
 `;
 
