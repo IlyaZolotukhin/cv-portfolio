@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import {ThemeStyled} from "../styles/Theme.styled";
+import {LinkStyled} from "./Link.styled";
 
-export const ButtonStyled = styled.button`
+export const ButtonStyled = styled(LinkStyled)`
     display: flex;
     gap: 10px;
     align-items: center;

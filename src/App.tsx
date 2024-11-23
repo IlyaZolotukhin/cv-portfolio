@@ -24,34 +24,52 @@ function App() {
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
     }
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
 
     return (
         <>
-            <Header>
+        {isMenuOpen ?
+            <Modal>
+                <CloseButton onClick={closeMenu}>&times;</CloseButton>
+                <MenuModal>
+                    <MenuItem><LinkStyled href="#about" onClick={closeMenu}><TextStyled white
+                        fontSize={35}>About</TextStyled></LinkStyled></MenuItem>
+                    <MenuItem><LinkStyled href="#skills" onClick={closeMenu}><TextStyled
+                        fontSize={35} white>Skills</TextStyled></LinkStyled></MenuItem>
+                    <MenuItem><LinkStyled href="#portfolio" onClick={closeMenu}><TextStyled
+                        fontSize={35} white>Portfolio</TextStyled></LinkStyled></MenuItem>
+                    <MenuItem><LinkStyled href="#contactMe" onClick={closeMenu}><TextStyled
+                        fontSize={35} white>Contact Me</TextStyled></LinkStyled></MenuItem>
+                </MenuModal>
+            </Modal> : <Header>
                 <LogoStyled><TextStyled darkBlue fontSize={25} fontWeight={700}>Iliya</TextStyled>
                     <TextStyled darkBlue fontSize={25}>Zolotyhin</TextStyled>
                 </LogoStyled>
                 <BurgerIcon onClick={toggleMenu}>
                     &#9776;
                 </BurgerIcon>
-                {isMenuOpen ? <div>bbbb</div> : <Menu>
-                    <MenuItem><LinkStyled href=""><TextStyled
-                        fontSize={25}>About</TextStyled></LinkStyled></MenuItem>
-                    <MenuItem><LinkStyled href=""><TextStyled
-                        fontSize={25}>Skills</TextStyled></LinkStyled></MenuItem>
-                    <MenuItem><LinkStyled href=""><TextStyled
-                        fontSize={25}>Portfolio</TextStyled></LinkStyled></MenuItem>
-                    <ButtonStyled><TextStyled white fontSize={25} fontWeight={600}>contact
-                        Me</TextStyled></ButtonStyled>
-                </Menu>}
-            </Header>
+
+                    <Menu>
+                        <MenuItem><LinkStyled href="#about"><TextStyled
+                            fontSize={25}>About</TextStyled></LinkStyled></MenuItem>
+                        <MenuItem><LinkStyled href="#skills"><TextStyled
+                            fontSize={25}>Skills</TextStyled></LinkStyled></MenuItem>
+                        <MenuItem><LinkStyled href="#portfolio"><TextStyled
+                            fontSize={25}>Portfolio</TextStyled></LinkStyled></MenuItem>
+                        <ButtonStyled href="#contactMe"><TextStyled white fontSize={25} fontWeight={600}>contact
+                            Me</TextStyled></ButtonStyled>
+                    </Menu>
+            </Header>}
             <Main>
-                <BoxAbout>
+                <BoxAbout id="about">
                     <Content>
                         <TextStyled darkBlue fontSize={35}>Hi !</TextStyled>
                         <TextStyled darkBlue fontSize={35} fontWeight={600}>I'm Zolotyhin Ilya.<br/> a Front-End
                             Developer</TextStyled>
-                        <TextStyled paddingTop={30} fontSize={23}>I have experience in creating SPA using React, Redux, TypeScript.
+                        <TextStyled paddingTop={30} fontSize={23}>I have experience in creating SPA using React, Redux,
+                            TypeScript.
                             Knowledge in user interface, testing, and debugging processes. I'm improving my skills
                             in this direction
                             and plan to expand them with new technologies, such as Angular.<br/>
@@ -60,42 +78,43 @@ function App() {
                     </Content>
                     <ContentImg src={heroImg} alt="heroImg"/>
                 </BoxAbout>
-                <TitleStyled>
+                <TitleStyled id="skills">
                     <TextStyled darkBlue fontSize={25}>Additional</TextStyled>
                     <TextStyled darkBlue fontSize={25} fontWeight={600}>skills</TextStyled>
                 </TitleStyled>
                 <BoxSkills>
                     {
                         skillCards.map((card, i) => {
-                            return <LinkStyled href=""><CardSkill key={i} imgSrc={card.imgSrc}
-                                                                  titleBold={card.titleBold}
-                                                                  titleNorm={card.titleNorm}
-                                                                  description={card.description}/></LinkStyled>;
+                            return <LinkStyled key={i} href=""><CardSkill imgSrc={card.imgSrc}
+                                                                          titleBold={card.titleBold}
+                                                                          titleNorm={card.titleNorm}
+                                                                          description={card.description}/></LinkStyled>;
                         })
                     }
                 </BoxSkills>
-                <TitleStyled>
+                <TitleStyled id="portfolio">
                     <TextStyled darkBlue fontSize={25}>My</TextStyled>
                     <TextStyled darkBlue fontSize={25} fontWeight={600}>Portfolio</TextStyled>
                 </TitleStyled>
                 <BoxPortfolio>
                     {
                         portfolioCards.map((card, i) => {
-                            return <LinkStyled href=""><CardPortfolio key={i} imgSrc={card.imgSrc} title={card.title}
-                                                                      bgImg={card.bgImg}
-                                                                      description={card.description}
-                                                                      titleImg={card.titleImg}/></LinkStyled>;
+                            return <LinkStyled key={i} href=""><CardPortfolio imgSrc={card.imgSrc} title={card.title}
+                                                                              bgImg={card.bgImg}
+                                                                              description={card.description}
+                                                                              titleImg={card.titleImg}/></LinkStyled>;
                         })
                     }
                 </BoxPortfolio>
-                <TitleStyled>
+                <TitleStyled id="contactMe">
                     <TextStyled darkBlue fontSize={25}>Contact</TextStyled>
                     <TextStyled darkBlue fontSize={25} fontWeight={600}>Me</TextStyled>
                 </TitleStyled>
                 <BoxContacts>
                     {
                         contactCards.map((card, i) => {
-                            return <CardContacts key={i} contact={card.contact} imgVector={card.imgVector} title={card.title}
+                            return <CardContacts key={i} contact={card.contact} imgVector={card.imgVector}
+                                                 title={card.title}
                                                  icon={card.icon} imgHover={card.imgHover}/>;
                         })
                     }
@@ -111,7 +130,8 @@ function App() {
 export default App;
 
 const Header = styled.header`
-    width: 1440px;
+    max-width: 1440px;
+    width: 100%;
     height: 84px;
     padding: 0 133px;
     position: fixed;
@@ -125,6 +145,7 @@ const Header = styled.header`
     background-color: white;
     @media ${ThemeStyled.media.tablet} {
         padding: 30px;
+        // left: 42px;
     }`;
 
 const BurgerIcon = styled.div`
@@ -148,6 +169,14 @@ const Menu = styled.ul`
         display: none;
     }
 `;
+const MenuModal = styled.ul`
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+    text-decoration: none;
+`;
 
 const MenuItem = styled.li`
     display: flex;
@@ -163,7 +192,7 @@ const Main = styled.section`
 `;
 
 const Footer = styled.footer`
-    height: 330px;
+    //height: 330px;
     max-width: 100vw;
     @media ${ThemeStyled.media.tablet} {
         width: 100%;
@@ -173,11 +202,75 @@ const Footer = styled.footer`
 `;
 
 const FooterImg = styled.img`
-    width: 100%;
-    height: 330px;
+    //width: 100%;
+    ///height: 330px;
     @media ${ThemeStyled.media.tablet} {
         width: 100%;
         height: 100px;
         margin: 0;
     }
 `;
+// Стили для компонентов
+/*const Header = styled.header
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px;
+;
+
+const LogoStyled = styled.div
+display: flex;
+;
+
+const BurgerIcon = styled.div
+cursor: pointer;
+font-size: 30px;
+;*/
+
+/*const Menu = styled.div
+display: flex;
+flex-direction: column;
+;
+
+const MenuItem = styled.div
+margin: 10px 0;
+;
+
+const LinkStyled = styled.a
+text-decoration: none;
+;
+
+const ButtonStyled = styled.button
+margin-top: 20px;
+;
+
+const TextStyled = styled.span
+color: ${props => (props.white ? 'white' : props.darkBlue ? '#003366' : 'black')};
+font-size: ${props => props.fontSize}px;
+font-weight: ${props => props.fontWeight};
+;*/
+
+const Modal = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;`
+;
+
+const CloseButton = styled.button`
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;`
+;

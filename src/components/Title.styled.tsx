@@ -10,12 +10,15 @@ export const TitleStyled = styled.h1<TitleStyledType>`
     flex-direction: row;
     justify-content: ${props => props.justifyContent || "center"};
     gap: 8px;
-    padding-bottom: 32px;
+    padding-bottom: 60px;
     @media ${ThemeStyled.media.tablet} {
-        padding-top: 32px;
+        padding-top: 92px;
     }
 `;
 
 export const TitleCard = styled(TitleStyled)`
     padding-bottom: 0;
+    @media ${ThemeStyled.media.tablet} {
+        padding-top: 32px;
+    }
 `;

@@ -11,5 +11,5 @@ export const Content = styled.div`
 
 export const ContentImg = styled.img`
     width: 501px;
-    height: 467px;
+    //height: 467px;
 `;
