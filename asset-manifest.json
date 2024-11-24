@@ -1,20 +1,19 @@
 {
   "files": {
-    "main.js": "/cv-portfolio/static/js/main.0d93d6d9.js",
+    "main.js": "/cv-portfolio/static/js/main.b778cd04.js",
     "static/js/787.25eaef86.chunk.js": "/cv-portfolio/static/js/787.25eaef86.chunk.js",
+    "static/media/hero.png": "/cv-portfolio/static/media/hero.8256b7f1f3ad53bb93f4.png",
     "static/media/e-commerce 2.png": "/cv-portfolio/static/media/e-commerce 2.eeb3ea168322e260ccc0.png",
-    "static/media/Edtech 3.png": "/cv-portfolio/static/media/Edtech 3.252d9d9265900602cf89.png",
-    "static/media/SendPay 1.png": "/cv-portfolio/static/media/SendPay 1.f214a4037a0388db65e5.png",
-    "static/media/heroImg.png": "/cv-portfolio/static/media/heroImg.d509700fe8b15dcc596e.png",
+    "static/media/todo.png": "/cv-portfolio/static/media/todo.e0489c551287e3fb55f6.png",
+    "static/media/photoUploader.png": "/cv-portfolio/static/media/photoUploader.15ffbfddf76678066e56.png",
     "static/media/footer.png": "/cv-portfolio/static/media/footer.e0fd95a6cb5121ec3066.png",
     "static/media/Design.png": "/cv-portfolio/static/media/Design.e7b89f8e9ed9cae7f2ef.png",
     "static/media/backEnd.png": "/cv-portfolio/static/media/backEnd.aacb5feb50ba2713ba45.png",
-    "static/media/Screenshot (162) 1.png": "/cv-portfolio/static/media/Screenshot (162) 1.060b451977634e682eec.png",
     "index.html": "/cv-portfolio/index.html",
-    "main.0d93d6d9.js.map": "/cv-portfolio/static/js/main.0d93d6d9.js.map",
+    "main.b778cd04.js.map": "/cv-portfolio/static/js/main.b778cd04.js.map",
     "787.25eaef86.chunk.js.map": "/cv-portfolio/static/js/787.25eaef86.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.0d93d6d9.js"
+    "static/js/main.b778cd04.js"
   ]
 }
