@@ -8,9 +8,9 @@ export type skillCardsType = {
 export type portfolioCardsType = {
     bgImg: string,
     imgSrc: string
-    title?: string
-    description?: string
-    titleImg?: string
+    title: string
+    description: string
+    link: string
 }
 
 export type contactCardsType = {

@@ -1,27 +1,31 @@
 import ellipse1 from "../assets/Ellipse 1.png";
 import ellipse2 from "../assets/Ellipse 2.png";
 import ellipse3 from "../assets/Ellipse 3.png";
-import portfolio1 from "../assets/SendPay 1.png";
+import portfolio1 from "../assets/photoUploader.png";
 import portfolio2 from "../assets/e-commerce 2.png";
-import portfolio3 from "../assets/Edtech 3.png";
-import titleImg from "../assets/Screenshot (162) 1.png";
+import portfolio3 from "../assets/todo.png";
 import {portfolioCardsType} from "./types";
 
 export const portfolioCards: portfolioCardsType[] = [
     {
         bgImg: ellipse1,
         imgSrc: portfolio1,
-        title: 'Sendpay',
+        title: 'Photo Uploader',
+        description: 'Website by Angular',
+        link:'https://photouploader-83383.web.app/'
     },
     {
         bgImg: ellipse2,
         imgSrc: portfolio2,
         title: 'E-Commerce',
-        description: 'Website'
+        description: 'Website by React',
+        link:'https://ilyazolotukhin.github.io/eShop/'
     },
     {
         bgImg: ellipse3,
         imgSrc: portfolio3,
-        titleImg: titleImg
+        title: 'TodoList',
+        description: 'Website by React',
+        link:'https://ilyazolotukhin.github.io/20-todolist/'
     },
 ]

@@ -10,7 +10,7 @@ const CardContacts = (props: contactCardsType) => {
             <CardBox imgHover={props.imgHover} bgImg={props.imgVector}>
                 <Icon src={props.icon} alt={props.title}/>
                 <TextStyled darkBlue fontSize={25} fontWeight={600}>
-                    {props.title}
+                    <span translate={'no'}>{props.title}</span>
                 </TextStyled>
             </CardBox>
         </LinkStyled>
@@ -48,6 +48,6 @@ const CardBox = styled.div<CardBoxType>`
 const Icon = styled.img`
     width: 100px;
     position: relative;
-    bottom: 50px;
+    bottom: 55px;
 `;
 

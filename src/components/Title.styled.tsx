@@ -4,7 +4,7 @@ import {ThemeStyled} from "../styles/Theme.styled";
 type TitleStyledType = {
     justifyContent?: string
 }
-export const TitleStyled = styled.h1<TitleStyledType>`
+export const TitleStyled = styled.h2<TitleStyledType>`
     margin: 0;
     display: flex;
     flex-direction: row;
@@ -12,7 +12,7 @@ export const TitleStyled = styled.h1<TitleStyledType>`
     gap: 8px;
     padding-bottom: 60px;
     @media ${ThemeStyled.media.tablet} {
-        padding-top: 92px;
+        padding-top: 92px;        
     }
 `;
 

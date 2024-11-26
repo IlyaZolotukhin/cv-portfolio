@@ -29,7 +29,4 @@ export const TextStyled = styled.p<TextStyledType>`
         color: ${ThemeStyled.colors.textColor.light};
     `}
 
-    @media ${ThemeStyled.media.tablet} {
-    //font-size: 14px;
-}
 `

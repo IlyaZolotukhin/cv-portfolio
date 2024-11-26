@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import {ButtonStyled} from "./components/Button.styled";
 import {LogoStyled} from "./components/Logo.styled";
-import footerImg from "./assets/footer.png";
+import footerImg from "./assets/wave 1.png";
 import {LinkStyled} from "./components/Link.styled";
 import {BoxAbout, BoxContacts, BoxPortfolio, BoxSkills} from "./components/Box.styled";
 import {Content, ContentImg} from "./components/Content.styled";
 import {TextStyled} from "./components/Text.styled";
-import heroImg from "./assets/heroImg.png";
+import heroImg from "./assets/hero.png";
 import {TitleStyled} from "./components/Title.styled";
 import CardSkill from "./CardSkill";
 import CardPortfolio from "./CardPortfolio";
@@ -45,7 +45,7 @@ function App() {
                 </MenuModal>
             </Modal> : <Header>
                 <LogoStyled><TextStyled darkBlue fontSize={25} fontWeight={700}>Iliya</TextStyled>
-                    <TextStyled darkBlue fontSize={25}>Zolotyhin</TextStyled>
+                    <TextStyled darkBlue fontSize={25}>Zolotukhin</TextStyled>
                 </LogoStyled>
                 <BurgerIcon onClick={toggleMenu}>
                     &#9776;
@@ -62,17 +62,17 @@ function App() {
                             Me</TextStyled></ButtonStyled>
                     </Menu>
             </Header>}
-            <Main>
-                <BoxAbout id="about">
+            <Main id="about">
+                <BoxAbout>
                     <Content>
                         <TextStyled darkBlue fontSize={35}>Hi !</TextStyled>
-                        <TextStyled darkBlue fontSize={35} fontWeight={600}>I'm Zolotyhin Ilya.<br/> a Front-End
-                            Developer</TextStyled>
+                        <TextStyled darkBlue fontSize={35} fontWeight={600}>I'm Ilya Zolotukhin.</TextStyled>
+                        <TextStyled darkBlue fontSize={35} fontWeight={600}>a Front-End Developer</TextStyled>
                         <TextStyled paddingTop={30} fontSize={23}>I have experience in creating SPA using React, Redux,
                             TypeScript.
                             Knowledge in user interface, testing, and debugging processes. I'm improving my skills
                             in this direction
-                            and plan to expand them with new technologies, such as Angular.<br/>
+                            and plan to expand them with new technologies, such as Angular.
                             I usually spend my free time reading IT-literature (M.Fauler),
                             Codewars and improving my English. Open to your suggestions.</TextStyled>
                     </Content>
@@ -99,10 +99,12 @@ function App() {
                 <BoxPortfolio>
                     {
                         portfolioCards.map((card, i) => {
-                            return <LinkStyled key={i} href=""><CardPortfolio imgSrc={card.imgSrc} title={card.title}
-                                                                              bgImg={card.bgImg}
-                                                                              description={card.description}
-                                                                              titleImg={card.titleImg}/></LinkStyled>;
+                            return <CardPortfolio key={i}
+                                                  imgSrc={card.imgSrc}
+                                                  title={card.title}
+                                                  bgImg={card.bgImg}
+                                                  description={card.description}
+                                                  link={card.link}/>;
                         })
                     }
                 </BoxPortfolio>
@@ -113,9 +115,11 @@ function App() {
                 <BoxContacts>
                     {
                         contactCards.map((card, i) => {
-                            return <CardContacts key={i} contact={card.contact} imgVector={card.imgVector}
+                            return <CardContacts key={i} contact={card.contact}
+                                                 imgVector={card.imgVector}
                                                  title={card.title}
-                                                 icon={card.icon} imgHover={card.imgHover}/>;
+                                                 icon={card.icon}
+                                                 imgHover={card.imgHover}/>;
                         })
                     }
                 </BoxContacts>
@@ -145,7 +149,6 @@ const Header = styled.header`
     background-color: white;
     @media ${ThemeStyled.media.tablet} {
         padding: 30px;
-        // left: 42px;
     }`;
 
 const BurgerIcon = styled.div`
@@ -192,7 +195,7 @@ const Main = styled.section`
 `;
 
 const Footer = styled.footer`
-    //height: 330px;
+    height: 330px;
     max-width: 100vw;
     @media ${ThemeStyled.media.tablet} {
         width: 100%;
@@ -202,53 +205,14 @@ const Footer = styled.footer`
 `;
 
 const FooterImg = styled.img`
-    //width: 100%;
-    ///height: 330px;
+    width: 100%;
+    height: 330px;
     @media ${ThemeStyled.media.tablet} {
         width: 100%;
-        height: 100px;
+        height: 200px;
         margin: 0;
     }
 `;
-// Стили для компонентов
-/*const Header = styled.header
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 10px;
-;
-
-const LogoStyled = styled.div
-display: flex;
-;
-
-const BurgerIcon = styled.div
-cursor: pointer;
-font-size: 30px;
-;*/
-
-/*const Menu = styled.div
-display: flex;
-flex-direction: column;
-;
-
-const MenuItem = styled.div
-margin: 10px 0;
-;
-
-const LinkStyled = styled.a
-text-decoration: none;
-;
-
-const ButtonStyled = styled.button
-margin-top: 20px;
-;
-
-const TextStyled = styled.span
-color: ${props => (props.white ? 'white' : props.darkBlue ? '#003366' : 'black')};
-font-size: ${props => props.fontSize}px;
-font-weight: ${props => props.fontWeight};
-;*/
 
 const Modal = styled.div`
     position: fixed;
@@ -256,7 +220,7 @@ const Modal = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.85);
     display: flex;
     flex-direction: column;
     align-items: center;

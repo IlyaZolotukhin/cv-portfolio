@@ -9,7 +9,7 @@ const CardSkill = (props:skillCardsType) => {
             <Image src={props.imgSrc} alt={'image'}/>
             <Content>
                 <TitleCard>
-                    <TextStyled fontSize={25} fontWeight={600}>{props.titleBold}</TextStyled>
+                    <TextStyled fontSize={25} fontWeight={600}><span translate={'no'}>{props.titleBold}</span></TextStyled>
                     <TextStyled fontSize={25}>{props.titleNorm}</TextStyled>
                 </TitleCard>
                 <TextStyled fontSize={16}>{props.description}</TextStyled>
