@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import {ButtonStyled} from "./components/Button.styled";
-import {LogoStyled} from "./components/Logo.styled";
 import footerImg from "./assets/wave 1.png";
 import {LinkStyled} from "./components/Link.styled";
 import {BoxAbout, BoxContacts, BoxPortfolio, BoxSkills} from "./components/Box.styled";
@@ -16,6 +14,8 @@ import CardContacts from "./CardContacts";
 import {contactCards} from "./data/contactCards";
 import {ThemeStyled} from "./styles/Theme.styled";
 import {useState} from "react";
+import {Header} from "./layout/header/Header";
+import {Modal} from "./layout/modal/Modal";
 
 function App() {
 
@@ -30,38 +30,7 @@ function App() {
 
     return (
         <>
-        {isMenuOpen ?
-            <Modal>
-                <CloseButton onClick={closeMenu}>&times;</CloseButton>
-                <MenuModal>
-                    <MenuItem><LinkStyled href="#about" onClick={closeMenu}><TextStyled white
-                        fontSize={35}>About</TextStyled></LinkStyled></MenuItem>
-                    <MenuItem><LinkStyled href="#skills" onClick={closeMenu}><TextStyled
-                        fontSize={35} white>Skills</TextStyled></LinkStyled></MenuItem>
-                    <MenuItem><LinkStyled href="#portfolio" onClick={closeMenu}><TextStyled
-                        fontSize={35} white>Portfolio</TextStyled></LinkStyled></MenuItem>
-                    <MenuItem><LinkStyled href="#contactMe" onClick={closeMenu}><TextStyled
-                        fontSize={35} white>Contact Me</TextStyled></LinkStyled></MenuItem>
-                </MenuModal>
-            </Modal> : <Header>
-                <LogoStyled><TextStyled darkBlue fontSize={25} fontWeight={700}>Iliya</TextStyled>
-                    <TextStyled darkBlue fontSize={25}>Zolotukhin</TextStyled>
-                </LogoStyled>
-                <BurgerIcon onClick={toggleMenu}>
-                    &#9776;
-                </BurgerIcon>
-
-                    <Menu>
-                        <MenuItem><LinkStyled href="#about"><TextStyled
-                            fontSize={25}>About</TextStyled></LinkStyled></MenuItem>
-                        <MenuItem><LinkStyled href="#skills"><TextStyled
-                            fontSize={25}>Skills</TextStyled></LinkStyled></MenuItem>
-                        <MenuItem><LinkStyled href="#portfolio"><TextStyled
-                            fontSize={25}>Portfolio</TextStyled></LinkStyled></MenuItem>
-                        <ButtonStyled href="#contactMe"><TextStyled white fontSize={25} fontWeight={600}>contact
-                            Me</TextStyled></ButtonStyled>
-                    </Menu>
-            </Header>}
+            {isMenuOpen ? <Modal closeMenu={closeMenu}/> : <Header toggleMenu={toggleMenu}/>}
             <Main id="about">
                 <BoxAbout>
                     <Content>
@@ -133,58 +102,6 @@ function App() {
 
 export default App;
 
-const Header = styled.header`
-    max-width: 1440px;
-    width: 100%;
-    height: 84px;
-    padding: 0 133px;
-    position: fixed;
-    z-index: 1;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    @media ${ThemeStyled.media.tablet} {
-        padding: 30px;
-    }`;
-
-const BurgerIcon = styled.div`
-    display: none;
-    @media ${ThemeStyled.media.tablet} {
-        font-size: 25px;
-        font-weight: bold;
-        display: flex;
-        margin: 0;
-        cursor: pointer;
-    }`
-;
-
-const Menu = styled.ul`
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 45px;
-    text-decoration: none;
-    @media ${ThemeStyled.media.tablet} {
-        display: none;
-    }
-`;
-const MenuModal = styled.ul`
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 45px;
-    text-decoration: none;
-`;
-
-const MenuItem = styled.li`
-    display: flex;
-`;
-
 const Main = styled.section`
     margin-top: 160px;
     display: flex;
@@ -213,28 +130,3 @@ const FooterImg = styled.img`
         margin: 0;
     }
 `;
-
-const Modal = styled.div`
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.85);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;`
-;
-
-const CloseButton = styled.button`
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;`
-;
