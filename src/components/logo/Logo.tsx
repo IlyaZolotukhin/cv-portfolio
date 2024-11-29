@@ -1,7 +1,7 @@
 import React from 'react';
-import {TextStyled} from "./Text.styled";
+import {TextStyled} from "../Text.styled";
 import styled from "styled-components";
-import {ThemeStyled} from "../styles/Theme.styled";
+import {ThemeStyled} from "../../styles/Theme.styled";
 
 export const Logo = () => {
     return (

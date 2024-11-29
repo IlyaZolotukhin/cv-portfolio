@@ -1,9 +1,9 @@
-import Vector from "../assets/Vector.png";
-import imgHover from "../assets/vectorHover.png";
+import Vector from "../assets/svg/Spot.svg";
+import imgHover from "../assets/svg/HoverSpot.svg";
 import {contactCardsType} from "./types";
-import GitHub from "../assets/github.png";
-import Telega from "../assets/telega.png";
-import Email from "../assets/fast message.png";
+import GitHub from "../assets/svg/GitHub.svg";
+import Telega from "../assets/svg/telega.svg";
+import Email from "../assets/svg/Mail.svg";
 import Telephon from "../assets/call.png";
 export const contactCards: contactCardsType[] = [
     {

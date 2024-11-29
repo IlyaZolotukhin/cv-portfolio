@@ -34,16 +34,13 @@ const CardBox = styled.div<CardBoxType>`
     background-image: url(${props => props.bgImg || 'none'});
     background-size: 166px;
     background-repeat: no-repeat;
-    background-position-x: 30px;
+    background-position-x: 35px;
     background-position-y: 19px;
 
     &:hover {
         background-image: url(${props => props.imgHover || 'none'});
     }
 
-    @media ${ThemeStyled.media.tablet} {
-        background-position-x: 25px;
-    }
 `;
 const Icon = styled.img`
     width: 100px;
