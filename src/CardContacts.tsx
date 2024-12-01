@@ -2,7 +2,6 @@ import styled from "styled-components";
 import {TextStyled} from "./components/Text.styled";
 import {contactCardsType} from "./data/types";
 import {LinkStyled} from "./components/Link.styled";
-import {ThemeStyled} from "./styles/Theme.styled";
 
 const CardContacts = (props: contactCardsType) => {
     return (
