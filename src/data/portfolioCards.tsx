@@ -3,7 +3,7 @@ import ellipse2 from "../assets/Ellipse 2.png";
 import ellipse3 from "../assets/Ellipse 3.png";
 import portfolio1 from "../assets/photoUploader.png";
 import portfolio2 from "../assets/e-commerce 2.png";
-import portfolio3 from "../assets/todo.png";
+import portfolio3 from "../assets/bukvalend.png";
 import {portfolioCardsType} from "./types";
 
 export const portfolioCards: portfolioCardsType[] = [
@@ -24,8 +24,8 @@ export const portfolioCards: portfolioCardsType[] = [
     {
         bgImg: ellipse3,
         imgSrc: portfolio3,
-        title: 'TodoList',
-        description: 'Website by React',
-        link:'https://ilyazolotukhin.github.io/20-todolist/'
+        title: 'Bukvalend',
+        description: 'Website by Next',
+        link:'https://bukvalend.ru/'
     },
 ]

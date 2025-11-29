@@ -47,7 +47,8 @@ const StyledHeader = styled.header`
     background-color: white;
     @media ${ThemeStyled.media.tablet} {
         padding: 30px;
-    }`;
+    }
+`;
 
 const BurgerIcon = styled.div`
     display: none;
